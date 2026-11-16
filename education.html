@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspire Academy | Competitive Exam Preparation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #102b3d;
+            --ink: #1d3442;
+            --gold: #d6a85f;
+            --cream: #f7f5ef;
+            --muted: #687984;
+            --line: #e7e4dc;
+            --soft: #eef4f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: var(--ink);
+            line-height: 1.65;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* TOP BAR */
+
+        .topbar {
+            background: var(--navy);
+            color: #dbe5e8;
+            padding: 9px 0;
+            font-size: 11px;
+        }
+
+        .topbar .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 10;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav {
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-mark {
+            width: 42px;
+            height: 42px;
+            background: var(--navy);
+            color: var(--gold);
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            font: 700 25px Georgia;
+        }
+
+        .brand small {
+            display: block;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #52616c;
+        }
+
+        .nav-links a:hover {
+            color: #a87935;
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 99px;
+            padding: 12px 20px;
+            background: var(--gold);
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-dark {
+            background: var(--navy);
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: 0;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            background: var(--cream);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a87935;
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 17px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 25px;
+            height: 1px;
+            background: var(--gold);
+            vertical-align: middle;
+            margin-right: 9px;
+        }
+
+        h1, h2, h3 {
+            font-family: "Playfair Display", serif;
+            line-height: 1.17;
+        }
+
+        h1 {
+            font-size: clamp(42px, 5vw, 65px);
+            color: var(--navy);
+        }
+
+        h1 span {
+            color: #b88743;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            max-width: 550px;
+            margin: 22px 0 27px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 13px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .plain-link {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 35px;
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .hero-stats strong {
+            display: block;
+            color: var(--navy);
+            font-size: 18px;
+        }
+
+        .hero-card {
+            background: var(--navy);
+            color: white;
+            border-radius: 22px;
+            padding: 32px;
+            box-shadow: 0 20px 50px #102b3d22;
+            position: relative;
+        }
+
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid #d6a85f66;
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .hero-card > * {
+            position: relative;
+        }
+
+        .hero-card .label {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-card h3 {
+            font-size: 30px;
+            margin: 12px 0;
+        }
+
+        .hero-card p {
+            color: #c5d1d5;
+            font-size: 12px;
+        }
+
+        .mini-list {
+            margin-top: 22px;
+        }
+
+        .mini-list div {
+            border-top: 1px solid #ffffff22;
+            padding: 11px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+
+        .mini-list b {
+            color: var(--gold);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 78px 0;
+        }
+
+        .section-soft {
+            background: #f8faf9;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 35px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(30px, 4vw, 43px);
+            color: var(--navy);
+        }
+
+        .section-heading p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        /* EXAM FILTERS */
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .filter-btn {
+            border: 1px solid var(--line);
+            background: white;
+            border-radius: 99px;
+            padding: 8px 15px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #596a74;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--navy);
+            color: white;
+        }
+
+        /* EXAM CARDS */
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 17px;
+        }
+
+        .exam-card {
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            padding: 22px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            transition: 0.2s;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px #102b3d14;
+        }
+
+        .exam-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .exam-icon {
+            width: 43px;
+            height: 43px;
+            background: #f6f0e5;
+            color: #a87935;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .exam-tag {
+            background: var(--soft);
+            color: #35616a;
+            border-radius: 99px;
+            padding: 6px 10px;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .exam-card h3 {
+            font-size: 22px;
+            color: var(--navy);
+            margin: 17px 0 8px;
+        }
+
+        .exam-card > p {
+            font-size: 12px;
+            color: var(--muted);
+            min-height: 42px;
+        }
+
+        .exam-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 18px 0;
+            padding: 15px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .exam-details span {
+            display: block;
+            color: #8a969d;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .exam-details strong {
+            display: block;
+            font-size: 12px;
+            color: var(--navy);
+            margin-top: 3px;
+        }
+
+        .exam-features {
+            list-style: none;
+            display: grid;
+            gap: 7px;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .exam-features li {
+            font-size: 11px;
+            color: #586873;
+        }
+
+        .exam-features li::before {
+            content: "✓";
+            color: #b88743;
+            font-weight: 700;
+            margin-right: 8px;
+        }
+
+        .exam-card .btn {
+            width: 100%;
+            padding: 11px;
+            font-size: 11px;
+        }
+
+        .fee-note {
+            text-align: center;
+            color: #8a969d;
+            font-size: 10px;
+            margin-top: 22px;
+        }
+
+        /* FACILITIES */
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .facility-card {
+            background: white;
+            border: 1px solid var(--line);
+            padding: 23px;
+            border-radius: 16px;
+        }
+
+        .facility-icon {
+            width: 39px;
+            height: 39px;
+            border-radius: 12px;
+            background: #f6f0e5;
+            color: #a87935;
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+            margin-bottom: 17px;
+        }
+
+        .facility-card h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 7px;
+        }
+
+        .facility-card p {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        /* ABOUT SECTION */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-panel {
+            background: var(--navy);
+            color: white;
+            border-radius: 22px;
+            padding: 34px;
+        }
+
+        .about-panel h3 {
+            font-size: 31px;
+            margin: 15px 0;
+        }
+
+        .about-panel p {
+            color: #c4d0d4;
+            font-size: 13px;
+        }
+
+        .about-stats {
+            display: flex;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .about-stats strong {
+            display: block;
+            color: var(--gold);
+            font-size: 24px;
+        }
+
+        .about-stats span {
+            font-size: 10px;
+            color: #c4d0d4;
+        }
+
+        .about-content h2 {
+            font-size: 40px;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .about-content > p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .tick-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .tick-list div {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tick-list div::before {
+            content: "✓";
+            color: #b88743;
+            margin-right: 9px;
+        }
+
+        /* FACULTY */
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .faculty-card {
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            padding: 24px;
+            text-align: center;
+            background: white;
+        }
+
+        .faculty-avatar {
+            width: 74px;
+            height: 74px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8ddc9, #f7f5ef);
+            margin: 0 auto 15px;
+            display: grid;
+            place-items: center;
+            color: #9a7137;
+            font-family: "Playfair Display", serif;
+            font-size: 25px;
+        }
+
+        .faculty-card h3 {
+            font-size: 20px;
+            color: var(--navy);
+        }
+
+        .faculty-card p {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 5px;
+        }
+
+        .faculty-card .subject {
+            color: #a87935;
+            font-weight: 700;
+        }
+
+        /* CALL TO ACTION */
+
+        .cta {
+            background: var(--cream);
+            padding: 60px 0;
+        }
+
+        .cta-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            color: var(--navy);
+            max-width: 600px;
+        }
+
+        .cta p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 9px;
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 45px;
+        }
+
+        .contact-info h2 {
+            font-size: 39px;
+            color: var(--navy);
+            margin-bottom: 13px;
+        }
+
+        .contact-info > p {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 23px;
+        }
+
+        .contact-detail {
+            font-size: 13px;
+            margin: 12px 0;
+            color: #53636d;
+        }
+
+        .contact-detail strong {
+            color: var(--navy);
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+        }
+
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            font: inherit;
+            font-size: 12px;
+            outline: none;
+            background: white;
+        }
+
+        form input:focus,
+        form select:focus,
+        form textarea:focus {
+            border-color: var(--gold);
+        }
+
+        form textarea {
+            grid-column: 1 / -1;
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        form button {
+            grid-column: 1 / -1;
+            justify-self: start;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--navy);
+            color: #c8d3d7;
+            padding: 28px 0;
+            font-size: 11px;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* COURSE ENQUIRY MODAL */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: #091923bb;
+            display: none;
+            place-items: center;
+            padding: 20px;
+            z-index: 50;
+        }
+
+        .modal.open {
+            display: grid;
+        }
+
+        .modal-box {
+            background: white;
+            border-radius: 18px;
+            max-width: 450px;
+            width: 100%;
+            padding: 28px;
+            position: relative;
+        }
+
+        .modal-box h3 {
+            font-size: 27px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .modal-box p {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 17px;
+            top: 13px;
+            border: 0;
+            background: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-box form {
+            grid-template-columns: 1fr;
+        }
+
+        .modal-box form textarea,
+        .modal-box form button {
+            grid-column: auto;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                gap: 35px;
+            }
+
+            .exam-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .facilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav {
+                height: 68px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px 25px;
+                flex-direction: column;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .exam-grid,
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .about-content h2,
+            .contact-info h2 {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .facilities-grid,
+            .tick-list {
+                grid-template-columns: 1fr;
+            }
+
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            form textarea,
+            form button {
+                grid-column: auto;
+            }
+
+            .hero-stats {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+        <div class="container">
+            <span>Admissions open for the 2026–27 session</span>
+            <span>Call: +91 98765 43210 | Mon–Sat, 8 AM–8 PM</span>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <div class="container nav">
+
+            <a href="#home" class="brand">
+                <span class="brand-mark">A</span>
+                <span>
+                    ASPIRE ACADEMY
+                    <small>LEARN · PREPARE · ACHIEVE</small>
+                </span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#exams">Courses</a>
+                <a href="#facilities">Facilities</a>
+                <a href="#faculty">Faculty</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <a href="#contact" class="btn nav-cta">Enquire Now ↗</a>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="hero" id="home">
+            <div class="container hero-grid">
+
+                <div>
+                    <div class="eyebrow">Your ambition deserves a plan</div>
+
+                    <h1>
+                        Prepare with purpose.
+                        <span>Achieve with confidence.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Focused guidance, experienced mentors and a learning
+                        environment designed to help you take the next step
+                        towards your dream career.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#exams" class="btn btn-dark">
+                            Explore Our Courses ↗
+                        </a>
+
+                        <a href="#contact" class="plain-link">
+                            Talk to an Academic Counsellor →
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div>
+                            <strong>10+</strong>
+                            Exam Pathways
+                        </div>
+
+                        <div>
+                            <strong>1:1</strong>
+                            Mentor Guidance
+                        </div>
+
+                        <div>
+                            <strong>Weekly</strong>
+                            Progress Reviews
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-card">
+                    <div class="label">Find your preparation path</div>
+
+                    <h3>One goal. A clear roadmap.</h3>
+
+                    <p>
+                        Structured learning plans for school-leavers,
+                        graduates and working aspirants.
+                    </p>
+
+                    <div class="mini-list">
+                        <div>
+                            <span>Engineering & Medical</span>
+                            <b>JEE · NEET</b>
+                        </div>
+
+                        <div>
+                            <span>University Admissions</span>
+                            <b>CUET</b>
+                        </div>
+
+                        <div>
+                            <span>Government Careers</span>
+                            <b>UPSC · SSC</b>
+                        </div>
+
+                        <div>
+                            <span>Banking & Defence</span>
+                            <b>IBPS · NDA</b>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COMPETITIVE EXAMS -->
+
+        <section id="exams">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Courses & Programmes</div>
+
+                    <h2>
+                        Choose the exam. We'll help plan the journey.
+                    </h2>
+
+                    <p>
+                        Explore our preparation programmes, course coverage,
+                        learning support and indicative fee plans.
+                    </p>
+                </div>
+
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">
+                        All Programmes
+                    </button>
+
+                    <button class="filter-btn" data-filter="school">
+                        After Class 12
+                    </button>
+
+                    <button class="filter-btn" data-filter="graduate">
+                        Graduate Level
+                    </button>
+
+                    <button class="filter-btn" data-filter="government">
+                        Government Jobs
+                    </button>
+
+                    <button class="filter-btn" data-filter="defence">
+                        Defence
+                    </button>
+                </div>
+
+                <div class="exam-grid" id="examGrid">
+
+                    <!-- JEE -->
+
+                    <article class="exam-card" data-category="school">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">JEE</div>
+                            <span class="exam-tag">Engineering</span>
+                        </div>
+
+                        <h3>JEE Main & Advanced</h3>
+
+                        <p>
+                            Preparation for engineering entrance examinations
+                            with concept-led learning and problem-solving practice.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>Class 11–12 / Eligible Pass-outs</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>12–24 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹48,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Classroom + Online</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Physics, Chemistry & Mathematics</li>
+                            <li>Chapter-wise tests and mock exams</li>
+                            <li>Doubt-clearing sessions</li>
+                            <li>Study materials and revision notes</li>
+                        </ul>
+
+                        <button class="btn" data-course="JEE Main & Advanced">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- NEET -->
+
+                    <article class="exam-card" data-category="school">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">NEET</div>
+                            <span class="exam-tag">Medical</span>
+                        </div>
+
+                        <h3>NEET UG</h3>
+
+                        <p>
+                            Build strong fundamentals and exam readiness
+                            for undergraduate medical admissions.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>Class 11–12 / Eligible Pass-outs</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>12–24 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹52,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Classroom + Online</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Physics, Chemistry & Biology</li>
+                            <li>NCERT-focused revision plans</li>
+                            <li>Full-length mock tests</li>
+                            <li>Regular doubt-clearing sessions</li>
+                        </ul>
+
+                        <button class="btn" data-course="NEET UG">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- CUET -->
+
+                    <article class="exam-card" data-category="school">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">CUET</div>
+                            <span class="exam-tag">University Entrance</span>
+                        </div>
+
+                        <h3>CUET UG</h3>
+
+                        <p>
+                            Subject-focused preparation for undergraduate
+                            university entrance and admission tests.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>Class 12 / Eligible Candidates</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>4–8 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹18,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Hybrid</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Domain subjects and language</li>
+                            <li>General test practice, where relevant</li>
+                            <li>Mock tests and practice papers</li>
+                            <li>Application guidance sessions</li>
+                        </ul>
+
+                        <button class="btn" data-course="CUET UG">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- UPSC -->
+
+                    <article class="exam-card" data-category="graduate">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">CSE</div>
+                            <span class="exam-tag">Civil Services</span>
+                        </div>
+
+                        <h3>UPSC Civil Services</h3>
+
+                        <p>
+                            A guided foundation programme for aspirants
+                            preparing for the Civil Services Examination.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>Graduate Degree</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>10–18 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹85,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Classroom + Online</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>General Studies foundation</li>
+                            <li>Current affairs preparation</li>
+                            <li>Prelims practice and answer writing</li>
+                            <li>Mentorship and evaluation</li>
+                        </ul>
+
+                        <button class="btn" data-course="UPSC Civil Services">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- SSC -->
+
+                    <article class="exam-card" data-category="government">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">SSC</div>
+                            <span class="exam-tag">Central Government</span>
+                        </div>
+
+                        <h3>SSC CGL & CHSL</h3>
+
+                        <p>
+                            Build speed, accuracy and confidence for
+                            Staff Selection Commission examinations.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>12th / Graduate, by Exam</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>6–10 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹22,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Classroom + Online</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Quantitative aptitude and reasoning</li>
+                            <li>English and general awareness</li>
+                            <li>Timed sectional mock tests</li>
+                            <li>Previous-year question practice</li>
+                        </ul>
+
+                        <button class="btn" data-course="SSC CGL & CHSL">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- BANKING -->
+
+                    <article class="exam-card" data-category="government">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">BANK</div>
+                            <span class="exam-tag">Banking</span>
+                        </div>
+
+                        <h3>IBPS & SBI Banking</h3>
+
+                        <p>
+                            Target bank PO and clerk examinations through
+                            structured practice and regular assessments.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>Graduate Degree, by Exam</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>5–8 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹19,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Hybrid</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Reasoning and quantitative aptitude</li>
+                            <li>English and banking awareness</li>
+                            <li>Speed-building test series</li>
+                            <li>Interview preparation guidance</li>
+                        </ul>
+
+                        <button class="btn" data-course="IBPS & SBI Banking">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- RAILWAY -->
+
+                    <article class="exam-card" data-category="government">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">RRB</div>
+                            <span class="exam-tag">Railways</span>
+                        </div>
+
+                        <h3>Railway RRB Exams</h3>
+
+                        <p>
+                            Preparation support for relevant RRB recruitment
+                            examinations and their selection stages.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>10th / 12th / Graduate, by Post</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>4–8 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹16,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Classroom</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Mathematics and general intelligence</li>
+                            <li>General science and awareness</li>
+                            <li>Practice sets and mock tests</li>
+                            <li>Previous-year question papers</li>
+                        </ul>
+
+                        <button class="btn" data-course="Railway RRB Exams">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- NDA -->
+
+                    <article class="exam-card" data-category="defence">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">NDA</div>
+                            <span class="exam-tag">Defence</span>
+                        </div>
+
+                        <h3>NDA & NA</h3>
+
+                        <p>
+                            Academic and written-exam preparation for
+                            candidates aspiring to join the armed forces.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>12th / Appearing, by Wing</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>6–12 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹28,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Classroom + Online</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>Mathematics and GAT preparation</li>
+                            <li>Physical fitness orientation</li>
+                            <li>SSB awareness sessions</li>
+                            <li>Regular written mock examinations</li>
+                        </ul>
+
+                        <button class="btn" data-course="NDA & NA">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                    <!-- CDS AFCAT -->
+
+                    <article class="exam-card" data-category="defence">
+
+                        <div class="exam-top">
+                            <div class="exam-icon">CDS</div>
+                            <span class="exam-tag">Defence</span>
+                        </div>
+
+                        <h3>CDS & AFCAT</h3>
+
+                        <p>
+                            Focused preparation for graduates aiming for
+                            officer-entry opportunities in the armed forces.
+                        </p>
+
+                        <div class="exam-details">
+                            <div>
+                                <span>Eligibility</span>
+                                <strong>Graduate, Subject to Entry</strong>
+                            </div>
+
+                            <div>
+                                <span>Duration</span>
+                                <strong>4–8 Months</strong>
+                            </div>
+
+                            <div>
+                                <span>Demo Course Fee</span>
+                                <strong>₹24,000 onwards</strong>
+                            </div>
+
+                            <div>
+                                <span>Mode</span>
+                                <strong>Hybrid</strong>
+                            </div>
+                        </div>
+
+                        <ul class="exam-features">
+                            <li>English, GK and mathematics, as applicable</li>
+                            <li>Mock examinations</li>
+                            <li>Interview orientation</li>
+                            <li>Current affairs sessions</li>
+                        </ul>
+
+                        <button class="btn" data-course="CDS & AFCAT">
+                            View Course & Enquire ↗
+                        </button>
+
+                    </article>
+
+                </div>
+
+                <p class="fee-note">
+                    Demo template: Fees, eligibility, duration and facilities
+                    are illustrative placeholders, not official exam fees or
+                    verified institute pricing. Replace them with approved
+                    institute details. Always verify eligibility and exam
+                    patterns against the latest official notification.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- FACILITIES -->
+
+        <section class="section-soft" id="facilities">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">The Learning Experience</div>
+
+                    <h2>Everything you need to stay on track.</h2>
+
+                    <p>
+                        A supportive learning environment to help students
+                        learn, practise and improve.
+                    </p>
+                </div>
+
+                <div class="facilities-grid">
+
+                    <div class="facility-card">
+                        <div class="facility-icon">▤</div>
+                        <h3>Study Material</h3>
+                        <p>
+                            Structured notes, topic-wise practice sheets
+                            and curated learning resources.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">⌁</div>
+                        <h3>Test Series</h3>
+                        <p>
+                            Regular topic tests, sectional assessments
+                            and full-length mock examinations.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">◎</div>
+                        <h3>Doubt Support</h3>
+                        <p>
+                            Dedicated doubt-clearing sessions and
+                            access to faculty guidance.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">▦</div>
+                        <h3>Digital Classroom</h3>
+                        <p>
+                            Recorded lessons and online resources
+                            for revision beyond class hours.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">♧</div>
+                        <h3>Mentor Support</h3>
+                        <p>
+                            Study planning, progress reviews and
+                            individual improvement guidance.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">⌂</div>
+                        <h3>Library & Study Zone</h3>
+                        <p>
+                            A quiet, focused space for self-study
+                            and preparation.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">◷</div>
+                        <h3>Flexible Batches</h3>
+                        <p>
+                            Morning and evening batch options,
+                            subject to availability.
+                        </p>
+                    </div>
+
+                    <div class="facility-card">
+                        <div class="facility-icon">✦</div>
+                        <h3>Scholarship Guidance</h3>
+                        <p>
+                            Information about institute scholarship
+                            tests and available fee concessions.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT US -->
+
+        <section id="about">
+            <div class="container about-grid">
+
+                <div class="about-panel">
+
+                    <div class="eyebrow">A Better Way to Prepare</div>
+
+                    <h3>
+                        Small steps. Consistent effort.
+                        Meaningful progress.
+                    </h3>
+
+                    <p>
+                        We believe good preparation is built through
+                        clear teaching, disciplined practice and
+                        the right support at the right time.
+                    </p>
+
+                    <div class="about-stats">
+                        <div>
+                            <strong>01</strong>
+                            <span>Personal Study Plan</span>
+                        </div>
+
+                        <div>
+                            <strong>02</strong>
+                            <span>Regular Feedback</span>
+                        </div>
+
+                        <div>
+                            <strong>03</strong>
+                            <span>Focused Practice</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="about-content">
+
+                    <div class="eyebrow">Why Aspire Academy</div>
+
+                    <h2>
+                        More than classes. A complete preparation ecosystem.
+                    </h2>
+
+                    <p>
+                        Every student has a different starting point.
+                        Our approach combines structured lessons,
+                        measurable practice and mentoring so learners
+                        can understand where they stand and what to
+                        work on next.
+                    </p>
+
+                    <div class="tick-list">
+                        <div>Experienced Subject Mentors</div>
+                        <div>Small-Batch Attention</div>
+                        <div>Transparent Course Plans</div>
+                        <div>Regular Performance Reports</div>
+                        <div>Updated Learning Resources</div>
+                        <div>Parent-Student Interaction</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FACULTY -->
+
+        <section class="section-soft" id="faculty">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="eyebrow">Meet Your Mentors</div>
+
+                    <h2>Guidance from people who care.</h2>
+
+                    <p>
+                        Meet the experienced faculty members who
+                        guide students throughout their preparation.
+                    </p>
+                </div>
+
+                <div class="faculty-grid">
+
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">RK</div>
+                        <h3>Rahul Kumar</h3>
+                        <p class="subject">Mathematics & Reasoning</p>
+                        <p>
+                            M.Sc. Mathematics · 8 years teaching experience
+                        </p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">AS</div>
+                        <h3>Dr. Ananya Sharma</h3>
+                        <p class="subject">Biology & Life Sciences</p>
+                        <p>
+                            Ph.D. Life Sciences · 7 years teaching experience
+                        </p>
+                    </div>
+
+                    <div class="faculty-card">
+                        <div class="faculty-avatar">VM</div>
+                        <h3>Vikram Mehta</h3>
+                        <p class="subject">Physics & General Studies</p>
+                        <p>
+                            M.Sc. Physics · 9 years teaching experience
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="fee-note">
+                    Faculty profiles are sample content.
+                    Replace them with verified faculty information.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+
+        <section class="cta">
+            <div class="container cta-inner">
+
+                <div>
+                    <h2>
+                        Your next chapter starts with one conversation.
+                    </h2>
+
+                    <p>
+                        Tell us your target exam. Our counsellor will help
+                        you understand the right programme.
+                    </p>
+                </div>
+
+                <a href="#contact" class="btn btn-dark">
+                    Speak to a Counsellor ↗
+                </a>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+            <div class="container contact-grid">
+
+                <div class="contact-info">
+
+                    <div class="eyebrow">Get in Touch</div>
+
+                    <h2>Let's plan your preparation.</h2>
+
+                    <p>
+                        Visit the academy or send an enquiry.
+                        Our team will get back to you with batch timings,
+                        fee details and admission information.
+                    </p>
+
+                    <div class="contact-detail">
+                        <strong>Visit Us</strong>
+                        123 Learning Avenue, Your City, India
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Call Us</strong>
+                        +91 98765 43210
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Email</strong>
+                        admissions@aspireacademy.in
+                    </div>
+
+                    <div class="contact-detail">
+                        <strong>Opening Hours</strong>
+                        Monday–Saturday · 8:00 AM–8:00 PM
+                    </div>
+
+                </div>
+
+                <form id="enquiryForm">
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Full Name"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone Number"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email Address"
+                    >
+
+                    <select name="course" required>
+                        <option value="">Select Target Exam</option>
+                        <option>JEE Main & Advanced</option>
+                        <option>NEET UG</option>
+                        <option>CUET UG</option>
+                        <option>UPSC Civil Services</option>
+                        <option>SSC CGL & CHSL</option>
+                        <option>IBPS & SBI Banking</option>
+                        <option>Railway RRB Exams</option>
+                        <option>NDA & NA</option>
+                        <option>CDS & AFCAT</option>
+                        <option>Not Sure Yet</option>
+                    </select>
+
+                    <textarea
+                        name="message"
+                        placeholder="Tell us what you would like to know..."
+                    ></textarea>
+
+                    <button type="submit" class="btn btn-dark">
+                        Send Enquiry ↗
+                    </button>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+
+            <span>
+                © <span id="year"></span>
+                <strong>Aspire Academy.</strong>
+                All rights reserved.
+            </span>
+
+            <span>
+                Learn with clarity. Prepare with confidence.
+            </span>
+
+        </div>
+    </footer>
+
+    <!-- COURSE ENQUIRY MODAL -->
+
+    <div class="modal" id="courseModal">
+
+        <div class="modal-box">
+
+            <button class="modal-close" id="closeModal">×</button>
+
+            <div class="eyebrow">Course Enquiry</div>
+
+            <h3 id="modalTitle">Course Details</h3>
+
+            <p>
+                Share your details and our academic counsellor
+                will contact you with the latest syllabus coverage,
+                batch schedule and confirmed fee structure.
+            </p>
+
+            <form id="modalForm">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <input
+                    type="hidden"
+                    name="course"
+                    id="modalCourse"
+                >
+
+                <button type="submit" class="btn btn-dark">
+                    Request a Call Back ↗
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // Mobile Navigation
+
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("show");
+            });
+        });
+
+
+        // Dynamic Copyright Year
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // Exam Category Filters
+
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const examCards = document.querySelectorAll(".exam-card");
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                document.querySelector(".filter-btn.active")
+                    .classList.remove("active");
+
+                button.classList.add("active");
+
+                const selectedFilter = button.dataset.filter;
+
+                examCards.forEach(card => {
+
+                    const category = card.dataset.category;
+
+                    if (
+                        selectedFilter === "all" ||
+                        category === selectedFilter
+                    ) {
+                        card.style.display = "flex";
+                    } else {
+                        card.style.display = "none";
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        // Course Enquiry Modal
+
+        const modal = document.getElementById("courseModal");
+
+        document.querySelectorAll("[data-course]").forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const course = button.dataset.course;
+
+                document.getElementById("modalTitle").textContent = course;
+
+                document.getElementById("modalCourse").value = course;
+
+                modal.classList.add("open");
+
+            });
+
+        });
+
+
+        // Close Modal
+
+        document.getElementById("closeModal").addEventListener("click", () => {
+            modal.classList.remove("open");
+        });
+
+        modal.addEventListener("click", event => {
+
+            if (event.target === modal) {
+                modal.classList.remove("open");
+            }
+
+        });
+
+
+        // Demo Form Submission
+        // Connect these forms to your Flask/PHP backend to receive enquiries.
+
+        function demoSubmit(event) {
+
+            event.preventDefault();
+
+            alert(
+                "Thank you! Your enquiry form is ready to be connected to the academy enquiry system."
+            );
+
+            event.target.reset();
+
+            modal.classList.remove("open");
+
+        }
+
+        document.getElementById("enquiryForm")
+            .addEventListener("submit", demoSubmit);
+
+        document.getElementById("modalForm")
+            .addEventListener("submit", demoSubmit);
+
+    </script>
+
+</body>
+</html>
